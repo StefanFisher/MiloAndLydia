@@ -43,3 +43,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 #gem 'therubyracer'
+
+gem 'quiet_assets', :group => :development

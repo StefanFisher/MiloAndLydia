@@ -9,6 +9,7 @@
     <title>Milo and Lydia - Fisher Family Pets</title>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+
   	
 
     <!-- Bootstrap core CSS -->
@@ -16,6 +17,12 @@
 	<link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/simplex/bootstrap.min.css" rel="stylesheet">
     <!-- Add custom CSS here -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" />
+
+
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -31,7 +38,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand" href="index.html">MiloAndLydia.com</a>
+                <a class="navbar-brand" href="/"><%= image_tag("logo.png", size: "420x70") %></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,14 +46,14 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="about.html">About</a>
                     </li>
-                    <li><a href="services.html">Services</a>
+                    <li><a href="animals.html">The Animals</a>
                     </li>
                     <li><a href="contact.php">Contact</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="portfolio-1-col.html">At Home</a>
+                            <li><a href="at-home.html">At Home</a>
                             </li>
                             <li><a href="portfolio-2-col.html">At the Farm</a>
                             </li>
@@ -109,8 +116,36 @@
 
     <!-- JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
+
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+ 
+ 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+    <!-- Optional FancyBox Stuff-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.fancybox').fancybox({
+            helpers: {
+              title : {
+                  type : 'float'
+              }
+            }
+            
+          });
+    });
+</script>
 
 </body>
 </html>

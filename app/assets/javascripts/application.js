@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 // Activates the Carousel
 $('.carousel').carousel({
   interval: 5000
@@ -23,4 +24,15 @@ $('.carousel').carousel({
 // Activates Tooltips for Social Links
 $('.tooltip-social').tooltip({
   selector: "a[data-toggle=tooltip]"
+})
+
+
+$(document).ready(function() {
+$('#fancybox').fancybox({
+    helpers: {
+        title : {
+            type : 'float'
+               }
+        }
+    })
 })
