@@ -1,0 +1,53 @@
+<% @animals.each do |animal| %>
+
+            <div class="col-sm-4">
+                <img class="img-responsive" src="http://placehold.it/750x450">
+                <h3><%= animal.name %>
+                    <small>Job Title</small>
+                </h3>
+                <ul class="info-list">
+                	<li>
+                		<strong>Type: </strong>
+                		<%= animal.species %>
+                	</li>
+                	<li>
+                		<strong>Breed: </strong>
+                		<%= animal.breed %>
+                	</li>
+                	<li>
+                		<strong>Color: </strong>
+                		<%= animal.color %>
+                	</li>
+                	<li>
+                		<strong>Age: </strong>
+                		<%= animal.age %>
+                	</li>
+                	<li>
+                		<strong>Birthday: </strong>
+                		<%= animal.birthday %>
+                	</li>
+                	<li>
+                		<strong>Nickname: </strong>
+                		<%= animal.nickname %>
+                	</li>
+
+                </ul>
+
+                    <p class="info-para">
+                        <%= animal.description %>
+                    </p>
+
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li class="tooltip-social facebook-link"><a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li class="tooltip-social linkedin-link"><a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li class="tooltip-social google-plus-link"><a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                    <li class="tooltip-social"><h3><%= link_to "", edit_animal_path(animal.id), class: "fa fa-edit" %></h3></li>
+                </ul>
+            </div>
+
+            <% end %>

@@ -38,15 +38,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand" href="/"><%= image_tag("logo.png", size: "420x70") %></a>
+                <%= link_to image_tag("logo_amp.png", size: "420x70"), root_path, class:"navbar-brand" %>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="about.html">About</a>
+                    <li><%= link_to "The Animals", animals_path %>
                     </li>
-                    <li><a href="animals.html">The Animals</a>
+                    <li><a href="services.html">What We Do</a>
                     </li>
                     <li><a href="contact.php">Contact</a>
                     </li>

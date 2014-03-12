@@ -148,3 +148,16 @@ footer {
 .navbar-brand{
   margin-top: -28px;
 }
+
+.info-list{
+  font-size: 12px;
+  max-height: 102px; /*six rows at 12px = 72, then 5*(12/2)=30 */
+  overflow: hidden;
+}
+
+.info-para{
+  min-height: 56px;
+  max-height: 56px; /*six rows at 12px = 72, then 5*(12/2)=30 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

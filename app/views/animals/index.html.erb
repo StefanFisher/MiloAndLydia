@@ -1,0 +1,81 @@
+<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">The Animals
+                    <small>It's Nice to Meet You!</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">The Animals</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <img class="img-responsive" src="http://placehold.it/750x450">
+            </div>
+            <div class="col-md-6">
+                <h2>Welcome to Milo&amp;Lydia.com!</h2>
+                <p>This is the place to see what Milo and Lydia and all their friends are up to!</p>
+                <p>Please enjoy exploring the rest of site to see all the furry team members sleeping, frolicing, and having fun!</p>
+            </div>
+
+        </div>
+
+        <!-- Team Member Profiles -->
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Team</h2>
+            </div>
+
+            <%= render 'team_show' %>
+
+            <%= button_to "Add", new_animal_path, method: "get", class: "btn btn-primary" %>
+
+        </div>
+
+
+    <!-- Our Customers -->
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Customers</h2>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <img class="img-responsive img-customer" src="http://placehold.it/500x300">
+            </div>
+
+        </div>
+
+
+</div>
