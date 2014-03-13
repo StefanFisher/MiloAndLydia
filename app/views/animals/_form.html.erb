@@ -1,4 +1,4 @@
-<%= form_for @animal do |f| %>
+<%= form_for @animal, :html => {:multipart => true} do |f| %>
 		  <% if @animal.errors.any? %>
 		  <div id="error_explanation">
 		    <h2><%= pluralize(@animal.errors.count, "error") %> prohibited
@@ -41,6 +41,13 @@
 		    <%= f.label :description %><br>
 		    <%= f.text_area :description %>
 		  </p>
+		  <p>
+    		<%= f.file_field :pet_image %>
+ 		  </p>
+ 		 <p>
+    		<%= f.label :remote_pet_image_url, "or image URL" %>
+    		<%= f.text_field :remote_pet_image_url %>
+  			</p>
 		  <p>
 		    <%= f.submit %>
 		  </p>

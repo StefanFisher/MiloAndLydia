@@ -45,3 +45,7 @@ end
 #gem 'therubyracer'
 
 gem 'quiet_assets', :group => :development
+
+gem 'carrierwave'
+gem "rmagick"
+gem "mini_magick"

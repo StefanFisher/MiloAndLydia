@@ -1,7 +1,8 @@
 <% @animals.each do |animal| %>
 
             <div class="col-sm-4">
-                <img class="img-responsive" src="http://placehold.it/750x450">
+    
+                <%= link_to image_tag(animal.pet_image.url(:thumb).to_s, class: "img-responsive"),animal.pet_image.url, {class: "fancybox thumbnail", title: animal.pet_image.identifier, "data-fancybox-group"=>"group1" } %>
                 <h3><%= animal.name %>
                     <small>Job Title</small>
                 </h3>
