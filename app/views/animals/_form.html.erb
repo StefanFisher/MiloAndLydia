@@ -48,6 +48,15 @@
     		<%= f.label :remote_pet_image_url, "or image URL" %>
     		<%= f.text_field :remote_pet_image_url %>
   			</p>
+  			<p><script>
+  				var dropboxbutton = Dropbox.createChooseButton(options);
+				$(".container").append(dropboxbutton);
+				</script>
+  			</p>
+  			<p>
+  			<%= link_to 'message',:remote => true, :url=>{:controller=>'animals', :action=>'stefan'}, :with=> "'msg='+msg" %>
+				
+  			</p>
 		  <p>
 		    <%= f.submit %>
 		  </p>

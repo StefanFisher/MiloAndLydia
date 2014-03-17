@@ -12,6 +12,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
+    binding.pry
     @animal = Animal.new(animal_params)
 
     if @animal.save
@@ -40,6 +41,17 @@ class AnimalsController < ApplicationController
     @animal.destroy
     redirect_to animals_path
   end
+
+def stefan
+    @animal = Animal.find(params[:id])
+ 
+    if @animal.update(animal_params)
+      
+    else
+      render 'edit'
+    end
+  end
+
 
   private
 

@@ -21,6 +21,90 @@
     <!-- Fancybox -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" />
 
+        <!-- JavaScript -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+ 
+ 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+    <!-- Optional FancyBox Stuff-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
+
+    <!-- drop box -->
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key= ENV['dropbox']></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.fancybox').fancybox({
+            helpers: {
+              title : {
+                  type : 'float'
+              }
+            }
+            
+          });
+    });
+</script>
+
+<script>
+    function onReceive(id,pod_id){
+    $.ajax({
+        url: "/animals/#{id}/stefan",
+        data: {pod_id: pod_id, id: id} 
+    });
+    console.log("1" + pod_id);
+};
+</script>
+
+<script>
+    options = {
+
+        // Required. Called when a user selects an item in the Chooser.
+        success: function(files) {
+            alert("Here's the file link: " + files[0].link)
+            console.log(files[0]);
+            onReceive(files[0].link, files[0].icon);
+            $("#animal_pet_image").append(files[0].link);
+            console.log(files[0]);
+        },
+
+        // Optional. Called when the user closes the dialog without selecting a file
+        // and does not include any parameters.
+        cancel: function() {
+
+        },
+
+        // Optional. "preview" (default) is a preview link to the document for sharing,
+        // "direct" is an expiring link to download the contents of the file. For more
+        // information about link types, see Link types below.
+        //linkType: "preview", // or "direct"
+        linkType: "direct", // or "direct"
+
+        // Optional. A value of false (default) limits selection to a single file, while
+        // true enables multiple file selection.
+        multiselect: false, // or true
+
+        // Optional. This is a list of file extensions. If specified, the user will
+        // only be able to select files with these extensions. You may also specify
+        // file types, such as "video" or "images" in the list. For more information,
+        // see File types below. By default, all extensions are allowed.
+       // extensions: ['.pdf', '.doc', '.docx'],
+    };
+
+</script>
+
+
 
 
   <%= csrf_meta_tags %>
@@ -115,38 +199,9 @@
     </div>
     <!-- /.container -->
 
-    <!-- JavaScript -->
-    <script src="http://code.jquery.com/jquery.js"></script>
 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
- 
- 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
-    <!-- Optional FancyBox Stuff-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
-
-    <script>
-    $(document).ready(function() {
-        $('.fancybox').fancybox({
-            helpers: {
-              title : {
-                  type : 'float'
-              }
-            }
-            
-          });
-    });
-</script>
 
 </body>
 </html>
