@@ -50,11 +50,13 @@
   			</p>
   			<p><script>
   				var dropboxbutton = Dropbox.createChooseButton(options);
+  				var stefan = {brent: "hey"};
 				$(".container").append(dropboxbutton);
+				$(".container").data(stefan);
 				</script>
   			</p>
   			<p>
-  			<%= link_to 'message',:remote => true, :url=>{:controller=>'animals', :action=>'stefan'}, :with=> "'msg='+msg" %>
+  			<%= link_to 'message',edit_animal_path(1) %>
 				
   			</p>
 		  <p>

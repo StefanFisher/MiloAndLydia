@@ -42,7 +42,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
 
     <!-- drop box -->
-    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key= ENV['dropbox']></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key= "ute6v1hnn8rn7l4" ></script>
 
     <script>
     $(document).ready(function() {
@@ -58,10 +58,11 @@
 </script>
 
 <script>
-    function onReceive(id,pod_id){
+    function onReceive(id,link,icon){
     $.ajax({
-        url: "/animals/#{id}/stefan",
-        data: {pod_id: pod_id, id: id} 
+        id: id
+        url: <%= edit_animal_path(params['id']) %>,
+        data: {remote_pet_image_url: link, icon: icon} 
     });
     console.log("1" + pod_id);
 };
@@ -74,7 +75,9 @@
         success: function(files) {
             alert("Here's the file link: " + files[0].link)
             console.log(files[0]);
-            onReceive(files[0].link, files[0].icon);
+            var id = <%= params['id'] %>
+            console.log(id);
+            onReceive(id, files[0].link, files[0].icon);
             $("#animal_pet_image").append(files[0].link);
             console.log(files[0]);
         },
