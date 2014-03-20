@@ -1,4 +1,7 @@
+require 'DLDropbox'
 class AnimalsController < ApplicationController
+  extend DLDropbox
+
   def index
     @animals = Animal.all
   end
@@ -43,13 +46,11 @@ class AnimalsController < ApplicationController
   end
 
 def stefan
-    @animal = Animal.find(params[:id])
- 
-    if @animal.update(animal_params)
-      
-    else
-      render 'edit'
-    end
+
+
+    DLDropbox.downloadFile(params[:link])
+    redirect_to animals_path
+
   end
 
 
