@@ -56,28 +56,30 @@
           });
     });
 </script>
-
 <script>
-    function onReceive(id,link,icon){
-    $.ajax({
-        id: id
-        url: <%= edit_animal_path(params['id']) %>,
-        data: {remote_pet_image_url: link, icon: icon} 
-    });
-    console.log("1" + pod_id);
-};
+    function onReceive(id,link){
+        $.ajax({
+            data: {link: link, stefan: id},
+            //id: id,
+            //remote: true,
+            //method: 'get',
+            //action: 'stefan'
+            url: "/animals/stefan"
+            });
+        console.log("1" + link);
+    };
 </script>
+
 
 <script>
     options = {
-
         // Required. Called when a user selects an item in the Chooser.
         success: function(files) {
             alert("Here's the file link: " + files[0].link)
             console.log(files[0]);
             var id = <%= params['id'] %>
             console.log(id);
-            onReceive(id, files[0].link, files[0].icon);
+            onReceive(id, files[0].link);
             $("#animal_pet_image").append(files[0].link);
             console.log(files[0]);
         },
